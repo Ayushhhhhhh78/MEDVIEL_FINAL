@@ -58,7 +58,7 @@ Layer D: Encrypted Off-Chain Storage (AES-256-GCM, IPFS CID Addressing, SHA-256 
 
 ### 4.3 Public vs Private Signals
 - **Public (7 signals):** `claimAmount`, `treatmentDate`, `hospitalRegistryRoot`, `policyCommitment`, `claimNullifier`, `hospitalAx`, `hospitalAy`.
-- **Private (Witness):** `claimId`, `policyId`, `hospitalId`, `policyLimit`, `policyExpiryDate`, `coverageRoot`, `procedureCode`, Merkle paths, `patientSecret`, `claimEpisodeId`, EdDSA signature components.
+- **Private (Witness):** `claimId`, `policyId`, `hospitalId`, `policyLimit`, `policyExpiryDate`, `coverageRoot`, `procedureCocde`, Merkle paths, `patientSecret`, `claimEpisodeId`, EdDSA signature components.
 
 ---
 
@@ -73,7 +73,7 @@ npm install
 cd backend && npm install && cd ..
 
 # Frontend
-cd frontend && npm install && cd ..
+d frontend && npm install && cd ..
 ```
 
 ### Step 2: Compile Circuit & Trusted Setup

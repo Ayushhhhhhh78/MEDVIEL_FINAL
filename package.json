@@ -1,0 +1,35 @@
+{
+  "name": "medveil-monorepo",
+  "version": "1.0.0",
+  "description": "MEDVEIL: Private Healthcare. Verifiable Claims.",
+  "private": true,
+  "scripts": {
+    "cli": "node scripts/medveil-cli.js",
+    "test:eddsa": "node backend/tests/eddsa.test.js",
+    "test:circuits": "node circuits/scripts/test-circuit.js",
+    "test:contracts": "npx hardhat test",
+    "test:backend": "node backend/tests/backend.test.js",
+    "test:integration": "node test/integration/workflow.test.js",
+    "test:all": "npm run test:eddsa && npm run test:circuits && npm run test:contracts && npm run test:backend && npm run test:integration",
+    "circuit:setup": "node circuits/scripts/setup.js",
+    "circuit:compile": "node circuits/scripts/compile.js",
+    "contracts:compile": "npx hardhat compile",
+    "contracts:deploy": "npx hardhat run scripts/deploy.js --network localhost",
+    "contracts:deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "seed": "node scripts/seed.js",
+    "backend:dev": "node backend/src/server.js",
+    "frontend:dev": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\""
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.1.0",
+    "circomlib": "^2.0.5",
+    "circomlibjs": "^0.1.7",
+    "concurrently": "^9.1.0",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.4",
+    "hardhat": "^2.22.17",
+    "snarkjs": "^0.7.5"
+  }
+}
